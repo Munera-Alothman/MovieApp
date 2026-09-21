@@ -25,6 +25,7 @@ class MovieViewModel : ViewModel() {
     /**
      * Fetches popular movies from TMDB and updates the movie list.
      */
+    // Load movies from TMDB API
     fun loadMovies() {
 
         if (isLoading) return
@@ -56,6 +57,7 @@ class MovieViewModel : ViewModel() {
      * in the background, then updates the movies list with the search results.
      * @param query Search text entered by the user.
      */
+    // Search movies using TMDB API
     fun searchMovies(
         query: String
     ) {
