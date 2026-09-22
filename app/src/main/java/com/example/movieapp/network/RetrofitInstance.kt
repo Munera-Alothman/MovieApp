@@ -5,6 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
+    //todo review : base url should be in the build config
 
     private const val BASE_URL =
         "https://api.themoviedb.org/3/"

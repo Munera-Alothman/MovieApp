@@ -8,6 +8,9 @@ import retrofit2.http.Query
 
 interface MovieApiService {
     // Retrieves popular movies with pagination support
+
+    //todo review : move to constants no hardcoded
+
     @GET("movie/popular")
     suspend fun getPopularMovies(
         @Query("page") page: Int

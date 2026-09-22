@@ -1,4 +1,5 @@
 package com.example.movieapp
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -45,18 +46,35 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
+/*todo review move this to a separate file, keep composables in different files for better readability and maintainability.
+ keep it as following
+   ui/
+  screens/
+    home/
+      HomeScreen.kt        <- MovieHomeScreen composable
+  components/
+    MovieItem.kt           <- the Card/Row movie item (reusable, e.g. in detail nav)
+  theme/                   <- already exists
+*
+* */
+
+//todo review : explore material design and see how search with app bar is handled and app bars are handled
 @Composable
 fun MovieHomeScreen(
     movieViewModel: MovieViewModel
 ) {
 
+    // todo: review check if this will survive configuration changes
     var searchText by remember {
         mutableStateOf("")
     }
 
     // Debounce search requests to avoid API calls on every keystroke
     LaunchedEffect(searchText) {
-
+// todo: review  use flow and debounce
+// todo: review  if i typed 4 chars then removed them before loading fires, it still refresh the data, prevent this
         // Wait until the user stops typing
         delay(1500)
 
@@ -79,7 +97,7 @@ fun MovieHomeScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
+//todo: review move to strings and resources
         Text(
             text = "Movie App"
         )
@@ -96,6 +114,7 @@ fun MovieHomeScreen(
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
             label = {
+                //todo: review move to strings and resources
                 Text("Search Movie")
             }
         )
@@ -125,7 +144,7 @@ fun MovieHomeScreen(
                     Row(
                         modifier = Modifier.padding(12.dp)
                     ) {
-
+//todo: review move to build config as url
                         AsyncImage(
                             model = "https://image.tmdb.org/t/p/w500${movie.poster_path}",
                             contentDescription = movie.title,
