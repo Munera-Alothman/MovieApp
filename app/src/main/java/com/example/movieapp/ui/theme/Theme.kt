@@ -32,7 +32,7 @@ private val LightColorScheme = lightColorScheme(
     onSurface = Color(0xFF1C1B1F),
     */
 )
-
+//todo review : dark mode is not consistent
 @Composable
 fun MovieAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

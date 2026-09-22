@@ -7,6 +7,7 @@ import okhttp3.Response
 class AuthInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
+        //todo review : Authorization needs to be constant not hardcoded , define object for constants and scoped by context
 
         val request = chain.request().newBuilder()
             .addHeader(

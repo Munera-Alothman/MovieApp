@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+#todo review : add misc to the gitignored files and review other files

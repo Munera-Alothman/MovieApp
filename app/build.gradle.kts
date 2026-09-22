@@ -4,18 +4,20 @@ plugins {
 }
 
 android {
+    //  todo: review change example to another name
     namespace = "com.example.movieapp"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
+        //  todo: review change example to another name
         applicationId = "com.example.movieapp"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
-
+// todo: review move this to gradle properties or any other gradle config file
         buildConfigField(
             "String",
             "BEARER_TOKEN",
@@ -58,6 +60,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    // todo: review move to toml
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")

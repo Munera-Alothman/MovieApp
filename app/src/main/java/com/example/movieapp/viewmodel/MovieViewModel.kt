@@ -25,6 +25,13 @@ class MovieViewModel : ViewModel() {
     /**
      * Fetches popular movies from TMDB and updates the movie list.
      */
+    // Load movies from TMDB API
+
+    //todo review : add error handling and retry mechanism for network failures
+    //todo review : add caching mechanism to store previously loaded movies to reduce network calls
+    //todo review : add loading state for first load, pagination load, pull to refresh, and error handling
+    //todo review : add empty state view when no results found
+
     fun loadMovies() {
 
         if (isLoading) return
@@ -50,12 +57,17 @@ class MovieViewModel : ViewModel() {
         }
     }
 
+
+    // todo review : use flow to handle pagination and error handling
     /**
      * Searches movies from TMDB API using the provided query.
      * This function runs on Dispatchers.IO to perform the network request
      * in the background, then updates the movies list with the search results.
      * @param query Search text entered by the user.
      */
+    // Search movies using TMDB API
+
+    //todo review : add use-cases classes to handle these functionality and every use case should have one responsibility
     fun searchMovies(
         query: String
     ) {
